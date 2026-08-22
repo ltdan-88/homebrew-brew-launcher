@@ -2,7 +2,7 @@ class BrewLauncher < Formula
   desc "Interactive launcher for installed Homebrew CLI applications"
   homepage "https://github.com/ltdan-88/brew-launcher"
   url "https://github.com/ltdan-88/brew-launcher/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "9e43f9578e32b8b8e0d5c6ea3d0346d9831104c0ffa38320a193ea5b1d48be1c"
+  sha256 "5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
   license "MIT"
 
   depends_on "fzf"
