@@ -6,6 +6,7 @@ class BrewLauncher < Formula
   license "MIT"
 
   depends_on "fzf"
+  depends_on "python3"
 
   def install
     bin.install "bin/brew-launcher"
