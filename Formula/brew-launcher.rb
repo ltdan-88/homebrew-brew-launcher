@@ -8,6 +8,11 @@ class BrewLauncher < Formula
   depends_on "fzf"
   depends_on "python3"
 
+  # macOS ships zsh as /bin/zsh by default. Most Linux distros don't
+  # install it at all, or put it at /usr/bin/zsh instead -- either way
+  # the launcher's #!/usr/bin/env zsh shebang needs one on PATH.
+  depends_on "zsh" if OS.linux?
+
   def install
     bin.install "bin/brew-launcher"
   end
