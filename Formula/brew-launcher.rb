@@ -1,8 +1,8 @@
 class BrewLauncher < Formula
   desc "Interactive launcher for installed Homebrew CLI applications"
   homepage "https://github.com/ltdan-88/brew-launcher"
-  url "https://github.com/ltdan-88/brew-launcher/archive/refs/tags/v0.25.1.tar.gz"
-  sha256 "902a318f61da31f0f697d558d77ec124cbc8009a7cd90341a793eaf30d6ae2df"
+  url "https://github.com/ltdan-88/brew-launcher/archive/refs/tags/v0.25.2.tar.gz"
+  sha256 "a5fcc8b4b9704418477953af42289eb023fc700ff653ee5d248abc1a22884d29"
   license "MIT"
 
   depends_on "fzf"
@@ -18,7 +18,7 @@ class BrewLauncher < Formula
   end
 
   test do
-    assert_match "brew-launcher 0.25.1",
+    assert_match "brew-launcher 0.25.2",
       shell_output("#{bin}/brew-launcher --version")
   end
 end
