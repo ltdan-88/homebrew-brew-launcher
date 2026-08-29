@@ -15,6 +15,17 @@ class BrewLauncher < Formula
 
   def install
     bin.install "bin/brew-launcher"
+
+    # lib/brew-launcher/cache_writer.py is the cache-writer, split out
+    # of bin/brew-launcher itself as of v0.48.0 (previously an embedded
+    # heredoc). Guarded with File.exist? so this formula keeps working
+    # unmodified against any release tarball, before or after that
+    # split -- bin/brew-launcher resolves this path as a sibling of its
+    # own install location (${0:A:h:h}/lib/brew-launcher/...), which is
+    # exactly what lib.install produces here.
+    if File.exist?("lib/brew-launcher/cache_writer.py")
+      (lib/"brew-launcher").install "lib/brew-launcher/cache_writer.py"
+    end
   end
 
   test do
